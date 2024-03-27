@@ -6,9 +6,7 @@ This will delete tags with any particular keyword
 name: Delete Tag
 
 on:
-  push:
-    branches:
-      - main  # Trigger the workflow on pushes to the main branch. Adjust if needed.
+  workflow_disaptch:
 
 jobs:
   delete:
@@ -24,5 +22,4 @@ jobs:
           owner: ${{ secrets.REPO_OWNER }}
           token: ${{ secrets.GITHUB_TOKEN }}
           repo: ${{ github.repository }}
-          deleteType: "tr"  # Change this according to your needs
           keyword: "your-keyword"
