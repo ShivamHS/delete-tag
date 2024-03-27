@@ -1,0 +1,30 @@
+name: 'Delete Release/Tag'
+
+description: 'Deletes GitHub releases or tags based on a keyword.'
+
+inputs:
+  owner:
+    description: 'The owner of the repository.'
+    required: true
+  token:
+    description: 'GitHub token with repo scope.'
+    required: true
+  repo:
+    description: 'The name of the repository.'
+    required: true
+  keyword:
+    description: 'Keyword to match for deletion.'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: 'Checkout Repository'
+      uses: actions/checkout@v2
+    - name: 'Delete Release/Tag'
+      uses: ./
+      with:
+        owner: ${{ inputs.owner }}
+        token: ${{ inputs.token }}
+        repo: ${{ inputs.repo }}
+        keyword: ${{ inputs.keyword }}
