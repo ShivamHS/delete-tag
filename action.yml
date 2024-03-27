@@ -29,8 +29,8 @@ runs:
     run: | 
       pwsh -File delete-tag.ps1 $owner $token $repo $keyword
     shell: pwsh
-      env:
-        owner: ${{ inputs.owner }}
-        token: ${{ inputs.token }}
-        repo: ${{ inputs.repo }}
-        keyword: ${{ inputs.keyword }}
+    env:
+      owner: ${{ inputs.owner }}
+      token: ${{ inputs.token }}
+      repo: ${{ inputs.repo }}
+      keyword: ${{ inputs.keyword }}
