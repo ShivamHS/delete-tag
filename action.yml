@@ -1,6 +1,10 @@
 name: 'Delete Release/Tag'
 
 description: 'Deletes GitHub releases or tags based on a keyword.'
+author: Shivam 
+branding:
+  icon: clipboard
+  color: blue
 
 inputs:
   owner:
