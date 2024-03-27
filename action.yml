@@ -27,7 +27,7 @@ runs:
       uses: actions/checkout@v2
     - name: 'Delete Release/Tag'
       run: | 
-        cd {{ github.workspace }}
+        pwd
         ls
         pwsh -File delete-tag.ps1 -owner $owner -token $token -repo $repo -keyword $keyword
       shell: pwsh
