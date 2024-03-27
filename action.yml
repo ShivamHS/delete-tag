@@ -26,11 +26,11 @@ runs:
     - name: 'Checkout Repository'
       uses: actions/checkout@v2
     - name: 'Delete Release/Tag'
-    run: | 
-      pwsh -File delete-tag.ps1 $owner $token $repo $keyword
-    shell: pwsh
-    env:
-      owner: ${{ inputs.owner }}
-      token: ${{ inputs.token }}
-      repo: ${{ inputs.repo }}
-      keyword: ${{ inputs.keyword }}
+      run: | 
+        pwsh -File delete-tag.ps1 $owner $token $repo $keyword
+      shell: pwsh
+      env:
+       owner: ${{ inputs.owner }}
+       token: ${{ inputs.token }}
+       repo: ${{ inputs.repo }}
+       keyword: ${{ inputs.keyword }}
