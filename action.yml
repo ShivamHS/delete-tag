@@ -27,7 +27,7 @@ runs:
       uses: actions/checkout@v2
     - name: 'Delete Release/Tag'
       run: | 
-        pwsh -File ./delete-tag.ps1 $owner $token $repo $keyword
+        pwsh -File delete-tag.ps1 -owner $owner -token $token -repo $repo -keyword $keyword
       shell: pwsh
       env:
        owner: ${{ inputs.owner }}
