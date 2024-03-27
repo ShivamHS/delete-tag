@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Execute Delete Release/Tag action
-        uses: 
+        uses: ShivamHS/delete-tag@v0.0.0
         with:
           owner: ${{ secrets.REPO_OWNER }}
           token: ${{ secrets.GITHUB_TOKEN }}
