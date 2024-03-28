@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v1
 
       - name: Execute Delete Release/Tag action
         uses: ShivamHS/delete-tag@v2
