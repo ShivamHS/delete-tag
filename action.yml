@@ -24,7 +24,7 @@ runs:
   using: docker
   image: Dockerfile
   args:  
-      - ${{ inputs.owner }}
-      - ${{ inputs.token }}
-      - ${{ inputs.repo }}
-      - ${{ inputs.keyword }}
+    - ${{ inputs.owner }}
+    - ${{ inputs.token }}
+    - ${{ inputs.repo }}
+    - ${{ inputs.keyword }}
