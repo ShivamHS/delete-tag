@@ -6,6 +6,7 @@ param (
     [string]$keyword =  $env:INPUT_KEYWORD
 )
 
+Write-Host "$deleteType"
 $headers = @{
     "Authorization" = "token $token"
     "User-Agent" = "PowerShell-GitHub-Action"
