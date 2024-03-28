@@ -1,12 +1,12 @@
 param (
-    [string]$owner = $env:INPUT_OWNER,
     [string]$token = $env:INPUT_TOKEN,
     [string]$repo = $env:INPUT_REPO,
-    [string]$deleteType = $env:INPUT_DELETETYPE,
-    [string]$keyword =  $env:INPUT_KEYWORD
+    [string]$keyword =  $env:INPUT_KEYWORD,
+    [string]$owner = $env:INPUT_OWNER,
+    [string]$deleteType = $env:INPUT_DELETETYPE
+    
 )
 
-Write-Host "dl: $deleteType, owner: $owner, repo: $repo, ky: $keyword"
 $headers = @{
     "Authorization" = "token $token"
     "User-Agent" = "PowerShell-GitHub-Action"
