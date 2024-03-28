@@ -7,9 +7,6 @@ branding:
   color: blue
 
 inputs:
-  owner:
-    description: 'The owner of the repository.'
-    required: true
   token:
     description: 'GitHub token with repo scope.'
     required: true
@@ -24,7 +21,6 @@ runs:
   using: docker
   image: Dockerfile
   args:  
-    - ${{ inputs.owner }}
     - ${{ inputs.token }}
     - ${{ inputs.repo }}
     - ${{ inputs.keyword }}
