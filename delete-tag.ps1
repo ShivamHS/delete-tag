@@ -1,8 +1,7 @@
-$owner = "$env:INPUT_OWNER"
-#$token = ""
-$token = "$env:INPUT_TOKEN"
-$repo = "$env:INPUT_REPO"
-$keyword = "$env:INPUT_KEYWORD"
+$owner = $env:INPUT_OWNER
+$token = $env:INPUT_TOKEN
+$repo = $env:INPUT_REPO
+$keyword = $env:INPUT_KEYWORD
 
  Write-Host "owner: $owner"
  Write-Host "repo: $repo"
