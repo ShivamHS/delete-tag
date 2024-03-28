@@ -21,18 +21,10 @@ inputs:
     required: true
 
 runs:
-  using: 'composite'
-  steps:
-    - name: 'Checkout Repository'
-      uses: actions/checkout@v2
-    - name: 'Delete Release/Tag'
-      run: | 
-        pwd
-        ls
-        pwsh -File delete-tag.ps1 -owner $owner -token $token -repo $repo -keyword $keyword
-      shell: pwsh
-      env:
-       owner: ${{ inputs.owner }}
-       token: ${{ inputs.token }}
-       repo: ${{ inputs.repo }}
-       keyword: ${{ inputs.keyword }}
+  using: docker
+  image: Dockerfile
+  args:  
+      - ${{ inputs.owner }}
+      - ${{ inputs.token }}
+      - ${{ inputs.repo }}
+      - ${{ inputs.keyword }}
