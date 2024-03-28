@@ -1,14 +1,13 @@
-$owner = $env:INPUT_OWNER
 $token = $env:INPUT_TOKEN
 $repo = $env:INPUT_REPO
 $keyword = $env:INPUT_KEYWORD
 
- Write-Host "owner: $owner"
+
  Write-Host "repo: $repo"
  Write-Host "keyword: $keyword"
 
 
-$tagsUrl = "https://api.github.com/repos/$owner/$repo/git/refs/tags"
+$tagsUrl = "https://api.github.com/repos/$repo/git/refs/tags"
 $headers = @{
     "Authorization" = "token $token"
     "User-Agent" = "PowerShell-GitHub-Tag-Deletion"
