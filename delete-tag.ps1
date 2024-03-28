@@ -13,6 +13,8 @@ $headers = @{
 }
 
 function DeleteTags {
+
+    $urlTags = "https://api.github.com/repos/$owner/$repo/git/refs/tags"
     $response = Invoke-RestMethod -Uri $urlTags -Headers $headers -Method Get
 
     foreach ($tag in $response) {
@@ -27,6 +29,8 @@ function DeleteTags {
 }
 
 function DeleteReleases {
+    
+    $urlReleases = "https://api.github.com/repos/$owner/$repo/releases"
     $response = Invoke-RestMethod -Uri $urlReleases -Headers $headers -Method Get
 
     foreach ($release in $response) {
@@ -42,15 +46,15 @@ function DeleteReleases {
 
 
 if ($deleteType -eq "tag") {
-    $url = "https://api.github.com/repos/$owner/$repo/git/refs/tags"
+    # $url = "https://api.github.com/repos/$owner/$repo/git/refs/tags"
     DeleteTags
 } elseif ($deleteType -eq "release") {
-    $url = "https://api.github.com/repos/$owner/$repo/releases"
+    # $url = "https://api.github.com/repos/$owner/$repo/releases"
     DeleteReleases
 } elseif ($deleteType -eq "tr") {
-    $urlTags = "https://api.github.com/repos/$owner/$repo/git/refs/tags"
+    # $urlTags = "https://api.github.com/repos/$owner/$repo/git/refs/tags"
     DeleteTags
-    $urlReleases = "https://api.github.com/repos/$owner/$repo/releases"
+    # $urlReleases = "https://api.github.com/repos/$owner/$repo/releases"
     DeleteReleases
 } else {
     Write-Host "Invalid delete type. Please enter 'tag', 'release', or 'tr'."
