@@ -19,6 +19,9 @@ inputs:
   keyword:
     description: 'Keyword to match for deletion.'
     required: true
+  deletetype:
+    description: 'Keyword to match for deletion.'
+    required: true
 
 runs:
   using: docker
@@ -28,3 +31,4 @@ runs:
     - ${{ inputs.repo }}
     - ${{ inputs.keyword }}
     - ${{ inputs.owner }}
+    - ${{ inputs.deletetype }}
