@@ -17,6 +17,7 @@ $headers = @{
 
 $response = Invoke-RestMethod -Uri $tagsUrl -Headers $headers -Method Get
 
+Write-Host "tagurl: $tagsurl"
  
 
 foreach ($tag in $response) {
@@ -27,7 +28,6 @@ foreach ($tag in $response) {
     
     if ($tagName -like "*$keyword*") {
         
-        $deleteUrl = "https://api.github.com/repos/$owner/$repo/git/$tagName"
         Invoke-RestMethod -Uri $tagname -Headers $headers -Method Delete
         Write-Host "Deleted tag: $tagName"
     }
