@@ -5,6 +5,8 @@ $repo = "$env:INPUT_REPO"
 $keyword = "$env:INPUT_KEYWORD"
 
  Write-Host "owner: $owner"
+ Write-Host "repo: $repo"
+ Write-Host "keyword: $keyword"
 
 
 $tagsUrl = "https://api.github.com/repos/$owner/$repo/git/refs/tags"
