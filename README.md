@@ -15,10 +15,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Execute Delete Release/Tag action
-        uses: ShivamHS/delete-tag@v2
+        uses: ShivamHS/delete-tag@v1
         with:
           token: ${{ secrets.REPO_TOKEN }} #generate new PAT and give delete access to it
           repo:  your-repo-name
