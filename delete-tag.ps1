@@ -12,22 +12,6 @@ $headers = @{
     "User-Agent" = "PowerShell-GitHub-Action"
 }
 
-if ($deleteType -eq "tag") {
-    $url = "https://api.github.com/repos/$owner/$repo/git/refs/tags"
-    DeleteTags
-} elseif ($deleteType -eq "release") {
-    $url = "https://api.github.com/repos/$owner/$repo/releases"
-    DeleteReleases
-} elseif ($deleteType -eq "tr") {
-    $urlTags = "https://api.github.com/repos/$owner/$repo/git/refs/tags"
-    DeleteTags
-    $urlReleases = "https://api.github.com/repos/$owner/$repo/releases"
-    DeleteReleases
-} else {
-    Write-Host "Invalid delete type. Please enter 'tag', 'release', or 'tr'."
-    Exit
-}
-
 function DeleteTags {
     $response = Invoke-RestMethod -Uri $urlTags -Headers $headers -Method Get
 
@@ -55,3 +39,21 @@ function DeleteReleases {
         }
     }
 }
+
+
+if ($deleteType -eq "tag") {
+    $url = "https://api.github.com/repos/$owner/$repo/git/refs/tags"
+    DeleteTags
+} elseif ($deleteType -eq "release") {
+    $url = "https://api.github.com/repos/$owner/$repo/releases"
+    DeleteReleases
+} elseif ($deleteType -eq "tr") {
+    $urlTags = "https://api.github.com/repos/$owner/$repo/git/refs/tags"
+    DeleteTags
+    $urlReleases = "https://api.github.com/repos/$owner/$repo/releases"
+    DeleteReleases
+} else {
+    Write-Host "Invalid delete type. Please enter 'tag', 'release', or 'tr'."
+    Exit
+}
+
