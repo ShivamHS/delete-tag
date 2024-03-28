@@ -13,6 +13,9 @@ inputs:
   repo:
     description: 'The name of the repository.'
     required: true
+  owner:
+    description: 'owner of repo.'
+    required: true
   keyword:
     description: 'Keyword to match for deletion.'
     required: true
@@ -24,3 +27,4 @@ runs:
     - ${{ inputs.token }}
     - ${{ inputs.repo }}
     - ${{ inputs.keyword }}
+    - ${{ inputs.owner }}
