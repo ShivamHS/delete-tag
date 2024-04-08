@@ -22,7 +22,7 @@ function DeleteTags {
 
         if ($tagName -like "*$keyword*") {
             $deleteUrl = "https://api.github.com/repos/$owner/$repo/git/$tagName"
-            Invoke-RestMethod -Uri $deleteUrl -Headers $headers -Method Delete
+            Invoke-RestMethod -Uri $tagName -Headers $headers -Method Delete
             Write-Host "Deleted tag: $tagName"
         }
     }
