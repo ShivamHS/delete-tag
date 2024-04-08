@@ -18,7 +18,7 @@ function DeleteTags {
     $response = Invoke-RestMethod -Uri $urlTags -Headers $headers -Method Get
 
     foreach ($tag in $response) {
-        $tagName = $tag.ref
+        $tagName = $tag.url
 
         if ($tagName -like "*$keyword*") {
             $deleteUrl = "https://api.github.com/repos/$owner/$repo/git/$tagName"
